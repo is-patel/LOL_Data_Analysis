@@ -48,7 +48,11 @@ I also noticed an interesting occurance where 2 games resulted in both teams los
 
 Next, we have to decide which columns will help us answer our question. As we are looking for the performance of each role in each game, we will have to hone in on player statistics. Furthermore, from playing the game I find that a reasonable measure for the performance of role is the amount of gold they make, as performing well usually results in more gold. Another measure is the xp earned, which is gained from spending your time efficiently and having minimal downtime from deaths. As such I kept the following columns:
 
-```'datacompleteness','position','result','totalgold','goldat10','opp_goldat10','golddiffat10','goldat15','opp_goldat15','golddiffat15','xpat10','opp_xpat10','xpdiffat10','xpat15','opp_xpat15','xpdiffat15'```
+```'datacompleteness','position','result','totalgold','goldat10',
+
+'opp_goldat10''golddiffat10','goldat15','opp_goldat15','golddiffat15'
+
+,'xpat10','opp_xpat10','xpdiffat10','xpat15','opp_xpat15','xpdiffat15'```
 
 Position, and result are also necessary to organize the data into their varius catagorise.
 
