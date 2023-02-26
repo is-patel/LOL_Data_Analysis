@@ -52,7 +52,9 @@ Next, we have to decide which columns will help us answer our question. As we ar
 
 'opp_goldat10''golddiffat10','goldat15','opp_goldat15','golddiffat15'
 
-,'xpat10','opp_xpat10','xpdiffat10','xpat15','opp_xpat15','xpdiffat15'```
+,'xpat10','opp_xpat10','xpdiffat10','xpat15','opp_xpat15','xpdiffat15'
+
+```
 
 Position, and result are also necessary to organize the data into their varius catagorise.
 
@@ -68,6 +70,7 @@ With this in mind, the columns Pooled Gold Prop and Pooled XP Prop were created 
 
 In the end, we are left with a dataframe that looks like this:
 
+<div class="table-wrapper" markdown="block">
 | position   | result   |   totalgold |   goldat10 |   opp_goldat10 |   golddiffat10 |   goldat15 |   opp_goldat15 |   golddiffat15 |   xpat10 |   opp_xpat10 |   xpdiffat10 |   xpat15 |   opp_xpat15 |   xpdiffat15 |   Pooled Gold Prop (10 min) |   Pooled Gold Prop (15 min) |   Pooled XP Prop (10 min) |   Pooled XP Prop (15 min) |
 |:-----------|:---------|------------:|-----------:|---------------:|---------------:|-----------:|---------------:|---------------:|---------:|-------------:|-------------:|---------:|-------------:|-------------:|----------------------------:|----------------------------:|--------------------------:|--------------------------:|
 | top        | False    |       10934 |       3228 |           3176 |             52 |       5025 |           4634 |            391 |     4909 |         4953 |          -44 |     7560 |         7215 |          345 |                    0.50406  |                    0.52024  |                  0.497769 |                  0.511675 |
@@ -75,6 +78,7 @@ In the end, we are left with a dataframe that looks like this:
 | mid        | False    |        9715 |       3283 |           3121 |            162 |       5118 |           5593 |           -475 |     4556 |         4485 |           71 |     6942 |         6789 |          153 |                    0.512648 |                    0.477827 |                  0.503927 |                  0.505571 |
 | bot        | False    |       10605 |       3600 |           3304 |            296 |       5461 |           6254 |           -793 |     3103 |         2838 |          265 |     4591 |         5934 |        -1343 |                    0.521437 |                    0.466155 |                  0.522303 |                  0.4362   |
 | sup        | False    |        6678 |       2678 |           2150 |            528 |       3836 |           3393 |            443 |     2161 |         2748 |         -587 |     3588 |         4085 |         -497 |                    0.554681 |                    0.53064  |                  0.440212 |                  0.467614 |
+</div>
 
 This concludes us preparing the data for analysis.
 
