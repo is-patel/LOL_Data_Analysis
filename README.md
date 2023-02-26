@@ -44,7 +44,7 @@ Because of this many columns become nan, meaning no data. This is due to some co
 
 Next, we are able to transform several columns from binary integer entries into booleans, these include datacompleteness, playoffs, and result.
 
-*	atacompleteness is either 'complete', which was mapped to True, or 'partial' which was mapped to False
+*	datacompleteness is either 'complete', which was mapped to True, or 'partial' which was mapped to False
 
 *	playoffs was 1 and 0, representing if it was a playoff or not, this True if 1 and False if 0
 
@@ -254,7 +254,7 @@ This lead us to get the p-value of 0.8851, or 88.51% simulated samples had a hig
 
 This will drive us to the conclusion that success in the jungle likely does not have a higher tendency to win games than success in other roles does.
 
-Or finally, answering the question of "Is Jungle 'OP'?", with no, it is not.
+Or finally, answering the question of "Is Jungle 'OP'?", with no, it is not (most likely).
 
 # Extra Data
 
@@ -264,11 +264,11 @@ As we have already done the work and if you are curious, we can expore the p-val
 
 Above we can see the other roles color coded
 
-TOP - pink
-JNG - red
-MID - green
-BOT - orange
-SUP - yellow
+*	TOP ~ pink
+*	JNG ~ red
+*	MID ~ green
+*	BOT ~ orange
+*	SUP ~ yellow
 
 (we can see bot laners have a clearly higher average gold proportion when winning than the average... the question now is "'Is ADC 'OP'?"), although one must keep in mind, when using the same sample distribution multiple times to come to multiple conclusions using multiple p-values the chance for a type 1 error increases, however, it does seem that BOT is well beyond the curve, and thus is very unlikely that a type one error will be commited when concluding based on only that p-value.
 
