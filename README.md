@@ -107,5 +107,108 @@ This is a similar statistic, however with total gold after the game ended, rathe
 
 This is just the general overview of the grouping of the data based on the previous pivot tables for your viewing so you can more easily compare between each table if you would like.
 
+# Assessment of Missingness
+
+Here we will assess the missingness of values and the reason/tendency behind these missing values within our dataset, this will better help us understand where our data is coming from, and the potential issues we may come along using some of the columns.
+
+## NMAR Analysis
+
+Within this particular data set, I do not believe that there is a single NMAR column. This is due to the nature of the data generating process. This process as very little human involvment, the information from the games are taken directly from the game, thus if a game has one column of information they will have all columns of information from that game. If one column of information is missing it seems to have to do with the url and league of the game. 
+
+Breaking down all of the columns, for things such as gameid and datacompleteness there are no missing values. Once we get to things such as url, league and split, they all seem to relate to eachother, where certain leagues seem to post urls, while most major leagues have no url, furhtermore the split is usually stated in major leagues. (I am defining a league to be major based on the amount of games coming from that region, examples being LDL and LPL). The other values all have to do with the game itself, which as explained before either have all the data or are missing most of the data(all from the same columns every time), this is directly related to the value in the data completeness column, which is further related to the league and url.
+
+As such all columns are either MD, MAR, or MCAR.
+
+## Missingness Dependency
+
+As we have established that all missing data is dependant on another column, let's try to highlight this.
+
+We will focus on the Split column, which is a method to define the time of year or what grouping they are playing in. There are several missing values in this column, specifically 46428 missing values, which is no small proportion of out data. 
+
+First I will attempt to highlight a couple columns which Split is more likely than not to be dependant on.
+
+### MAR on League
+
+The League column covers the pro region in which these games are played. Here we will analyse the the relation between the league in which games are played and the tendency for split to be missing.
+
+To do this we will perform many permutation tests and calculate the TVD based on the proportion of each league in missing and non missing respectively. 
+
+But before this, we must calculate the TVD for our data, which is roughly 0.843. 
+
+Then we will shuffle the missingness of these rows and check the proportion 1000 times, after this was done we find that 0 of them where greater than this statistic, this means 0.0% of scenarios out of 100 lead to a scenario as or more extream than the one we observed, which is indicative of a high correlation.
+
+As such we reject the possibility that split missingness is likely independant on league.
+
+This leads to the conclusing that split is MAR dependent on league.
+
+~ inserthere(mfig1)
+
+In the above figure we can see the large difference between the proportions of different leagues within their respective missing or existing split. The large difference in distribution indicates that there is a relation.
+
+### MAR on Total Gold
+
+As I have explained the total gold column before we can skip straight to the permuation test.
+
+However this time we will be using the average total gold of all rows as our test statistic.
+
+Then, we again permutate the data and collect each of their means, and see how many of them fall above and below our observered t-statistic. This lead to the aquisition of a p-value of 0.008 or 0.8% of the simulated statitics being more extreme than the observed, as such we must assume that it is more likely than not that Split is MAR and depedent on Total Gold.
+
+~ inserthere(mfig2)
+
+Above is the distribution of each missing and existing in the real dataset. I used probability desnity, as evidently there will be less frequency in a sample that is samller than the other; 40 thousand is half as much as 80 thousand.
+
+Here we can see that despite being vary close to eachother, the means are still far enough appart that due to the large number of data points the difference is more than should be expected between the overall popultion and sample to be the same.
+
+### Independant of Gold at 10 minutes
+
+Similarly to the previous tests, and exactly the same as the last one we will run on the average of the total gold column, then permute.
+
+This lead to the p-value of 0.173 or 17.3% of the simulated statistics being as or more extreme than the observed.
+
+Unlike the previous 2 simulations, 17.3% is higher than the standard 5% cutoff, which I will be using in this analysis, and thus we must reject that is it more likely than not for Split to be dependant on gold at 10 minutes. This also means we must see Split as independant of Gold at 10 minutes, rather than dependant.
 
 
+# Hypothesis Testing
+
+Finally, after doing all of this analysis on the rest of the dataset, we are able to hone in on our question and finally come to some sort of conclusion or a general idea of the trend, and if jungle really is 'OP'. 
+
+First, to begin we must lay out our rules for this hypothesis test.
+
+> Null Hypothesis - the tendency to win games with a winning jungler is the same as winning with another winning role
+
+> Alternate Hypothesis - the tendency to win games with a winning jungle is greater than winning with another winning role
+
+> Test Statistic - the average proportion of gold held by the winning jungler of the total gold of both junglers (defined by Gold Prop at 15 min)
+
+> Significance Level - the standard 5%, as we are looking to see if jungle is signficantly more impactful than other roles
+
+This test statistic was chosen based on the many reasons explained throught this process, but more sepcifically it allows us to isolate how successful a role was in a game, with minimal influence from other roles on their team. This will allow use to compare their semi-isolated success against their oponent to the outcome of the game. This ideally lets us see the tendency to win based on the success of each role.
+
+We selected gold over XP, as it is easier to see a difference in Gold, not only from my experience in playing, but also the many graphical and statistical data displayed earlier. 
+
+With this we will perform a standard hypothesis test, where we resample from the original data set many times, and calculate how many are as or more extreme than our observed value. 
+
+This lead us to get the p-value of 0.8851, or 88.51% simulated samples had a higher average gold proportion at 15 min than our observed statistic. This is much higher than our signficance level of 5%.
+
+~inserthere(htfig1)
+
+This will drive us to the conclusion that success in the jungle likely does not have a higher tendency to win games than success in other roles does.
+
+Or finally, answering the question of "Is Jungle 'OP'?", with no, it is not.
+
+# Extra Data
+
+As we have already done the work and if you are curious, we can expore the p-values for other similar roles.
+
+
+~inserthere(htfig2)
+
+Above we can see the other roles color coded
+
+TOP - pink
+JNG - red
+MID - green
+BOT - orange
+SUP - yellow
+
+(we can see bot laners have a clearly higher average gold proportion when winning than the average... the question now is "'Is ADC 'OP'?")
