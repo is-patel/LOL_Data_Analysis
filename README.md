@@ -71,7 +71,6 @@ In the end, we are left with a dataframe that looks like this:
 | mid        | False    |        9715 |       3283 |           3121 |            162 |       5118 |           5593 |           -475 |     4556 |         4485 |           71 |     6942 |         6789 |          153 |                    0.512648 |                    0.477827 |                  0.503927 |                  0.505571 |
 | bot        | False    |       10605 |       3600 |           3304 |            296 |       5461 |           6254 |           -793 |     3103 |         2838 |          265 |     4591 |         5934 |        -1343 |                    0.521437 |                    0.466155 |                  0.522303 |                  0.4362   |
 | sup        | False    |        6678 |       2678 |           2150 |            528 |       3836 |           3393 |            443 |     2161 |         2748 |         -587 |     3588 |         4085 |         -497 |                    0.554681 |                    0.53064  |                  0.440212 |                  0.467614 |
-​
 
 This concludes us preparing the data for analysis.
 
@@ -81,13 +80,13 @@ Let us look at some relevant distributions and shape of our data
 
 ### Univariate Fig 1
 
-<iframe src="assets/fig1_1.html" width=800 height=600 frameBorder=0></iframe>
+<iframe src="assets/ufig1_1.html" width=800 height=600 frameBorder=0></iframe>
 
 We can easily see that there is a symetrical nature to this, this is resulting from the creation of this statistic, as in every game each role will have a complementry entry of 1-proportion, and thus the data will always be reflected around 0.5. We can also see that its mean, mode, and median, are all roughly around this point, indicating a tendency for this proportion to usually be 50/50 for each role on each team, and very little games where certain games win hard.
 
 ### Univariate Fig 2
 
-<iframe src="assets/fig2_1.html" width=800 height=600 frameBorder=0></iframe>
+<iframe src="assets/ufig2_1.html" width=800 height=600 frameBorder=0></iframe>
 
 We can easily see a very similar trend for this graph, a mirrored graph around 0.5, and the tendency for the data to be centered around 0.5. With the mean, median, and mode all being around this point as well. It tells a similar story to the previous graph.
 
