@@ -234,15 +234,15 @@ Finally, after doing all of this analysis on the rest of the dataset, we are abl
 
 First, to begin we must lay out our rules for this hypothesis test.
 
-> Null Hypothesis - the tendency to win games with a winning jungler is the same as winning with another winning role
+> Null Hypothesis - the tendency to win games with a 'harder' winning jungler is the same as winning with another winning role
 
-> Alternate Hypothesis - the tendency to win games with a winning jungle is greater than winning with another winning role
+> Alternate Hypothesis - the tendency to win games with a 'harder' winning jungle is greater than winning with another winning role
 
 > Test Statistic - the average proportion of gold held by the winning jungler of the total gold of both junglers (defined by Gold Prop at 15 min)
 
 > Significance Level - the standard 5%, as we are looking to see if jungle is signficantly more impactful than other roles
 
-This test statistic was chosen based on the many reasons explained throught this process, but more sepcifically it allows us to isolate how successful a role was in a game, with minimal influence from other roles on their team. This will allow use to compare their semi-isolated success against their oponent to the outcome of the game. This ideally lets us see the tendency to win based on the success of each role.
+This test statistic was chosen based on the many reasons explained throught this process, but more sepcifically it allows us to isolate how successful a role was in a game, with minimal influence from other roles on their team. This will allow use to compare their semi-isolated success against their oponent to the outcome of the game. This ideally lets us see the tendency to win based on the success of each role. With this we can calcualte this test statistic for jungle, which will indicate by how much (the 'hardness' by which) they are winning at 15 min in games that will be won.
 
 We selected gold over XP, as it is easier to see a difference in Gold, not only from my experience in playing, but also the many graphical and statistical data displayed earlier. 
 
