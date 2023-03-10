@@ -73,7 +73,7 @@ With this in mind, the columns Pooled Gold Prop and Pooled XP Prop were created 
 
 In the end, we are left with a dataframe that looks like this:
 
-<div class="table-wrapper" markdown="block">
+<d\i\v\ \c\l\a\s\s\=\"table-wrapper" markdown="block">
 
 | position   | result   |   totalgold |   goldat10 |   opp_goldat10 |   golddiffat10 |   goldat15 |   opp_goldat15 |   golddiffat15 |   xpat10 |   opp_xpat10 |   xpdiffat10 |   xpat15 |   opp_xpat15 |   xpdiffat15 |   Pooled Gold Prop (10 min) |   Pooled Gold Prop (15 min) |   Pooled XP Prop (10 min) |   Pooled XP Prop (15 min) |
 |:-----------|:---------|------------:|-----------:|---------------:|---------------:|-----------:|---------------:|---------------:|---------:|-------------:|-------------:|---------:|-------------:|-------------:|----------------------------:|----------------------------:|--------------------------:|--------------------------:|
@@ -83,7 +83,7 @@ In the end, we are left with a dataframe that looks like this:
 | bot        | False    |       10605 |       3600 |           3304 |            296 |       5461 |           6254 |           -793 |     3103 |         2838 |          265 |     4591 |         5934 |        -1343 |                    0.521437 |                    0.466155 |                  0.522303 |                  0.4362   |
 | sup        | False    |        6678 |       2678 |           2150 |            528 |       3836 |           3393 |            443 |     2161 |         2748 |         -587 |     3588 |         4085 |         -497 |                    0.554681 |                    0.53064  |                  0.440212 |                  0.467614 |
 
-</div>
+<\/d\i\v\>\
 
 This concludes us preparing the data for analysis.
 
